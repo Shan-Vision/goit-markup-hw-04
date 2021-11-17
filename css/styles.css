@@ -9,6 +9,9 @@
   --footer-contact-color: rgba(255, 255, 255, 0.6);
   --header-border-color: #ececec;
   --content-border-color: #eeeeee;
+  --features-icon-background: #F5F4FA;
+  --footer-icon-background:#43444d;
+  --team-icon-color:#AFB1B8;
 }
 
 li {
@@ -145,6 +148,35 @@ body {
 .contact-list .contact-item + .contact-item {
   margin-left: 50px;
 }
+.contact-item{
+  display: flex;
+  align-items: center;
+}       
+.icon-contact{
+  width: 16px;
+  height: 12px;
+  margin-right: 10px; 
+  cursor: pointer;
+  fill: violet;
+  background-color: yellow;
+ }
+.icon-contact:hover{
+  fill: var(--accent-color);
+  background-color: rgb(15, 15, 15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --------------------------------------Hero */
 .main-bgc{
   max-width: 1600px;
@@ -213,6 +245,28 @@ body {
 .features-item{
   width: 270px;
 }
+.features-item::before{
+  display: block;
+  content:"";
+  height: 120px;
+  margin-bottom: 30px;
+  background-color:var(--features-icon-background);
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+.features-item.one::before{
+  background-image: url(../images/png/anten.png);
+}
+.features-item.two::before{
+  background-image: url(../images/png/clock.png);
+}
+.features-item.three::before{
+  background-image: url(../images/png/diagram.png);
+}
+.features-item.four::before{
+  background-image: url(../images/png/astronaut.png);
+}
 .features-caption {
   margin-bottom: 10px;
 
@@ -262,6 +316,7 @@ body {
 .team-text {
   color: var(--primary-text-color);
   line-height: 1.87;
+  margin-bottom: 16px;
 }
 .team-list {
   display: flex;
@@ -273,6 +328,41 @@ body {
   background-color: var(--primary-white-color);
   padding: 30px 0;
 }
+.team-icon-list{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* flex-direction: center; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* padding-top: 10px; */
+}
+.team-icon-item{
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+}
+.icon-team{
+  width: 22px;
+  height: 22px;
+  fill:var(--team-icon-color);
+}
+/* .team-icon-link{
+  color: var(--team-icon-color);
+} */
+
+.team-icon-item:hover{
+  fill:var(--primary-white-color);
+  background-color:var(--accent-color);
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
 /*------------------------ Портфолио кнопки */
 .content-primary-list .content-button {
   display: inline-block;
@@ -292,6 +382,7 @@ body {
 .content-button curent {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
   .content-primary-list {
   display: flex;
@@ -319,6 +410,9 @@ body {
 .wrap-items:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
+.wrap-items:hover{
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .content-text {
   color: var(--primary-text-color);
   font-size: 16px;
@@ -345,6 +439,11 @@ body {
   background-color: var(--header-bgc-color);
   padding: 60px 0;
 }
+.container.container-footer{
+  display: flex;
+  align-items: baseline;
+}
+/* -------------------------------------Footer-logo */
 .container .logo {
   padding: 0 0 20px 0;
 }
@@ -362,4 +461,37 @@ body {
   color: var(--primary-white-color);
   line-height: 1.71;
   font-style: normal;
+}
+/* ----------------------------------------Footer-join */
+.container-join{
+  margin-left: 70px;
+}
+.join-title{
+  font-weight: bold;
+  color:var(--primary-white-color);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.join-list{
+  display: flex;
+}
+.join-items{
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 50%;
+  background-color:var(--footer-icon-background);
+
+}
+.join-list .join-items + .join-items{
+  margin-left: 10px;
+}
+.icon-join{
+  width: 22px;
+  height: 22px;
+  fill: var(--primary-white-color);
+}
+.join-items:hover{
+  fill:var(--primary-white-color);
+  background-color: var(--accent-color);
 }

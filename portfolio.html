@@ -12,22 +12,29 @@
 </head>
 <body>
       <!-- Верхняя шапка -->
-      <header class="header"> 
-      <div class="container head">
-         <a href="./index.html" rel="noopener noreferrer" class="logo" lang="en">Web<span
-               class="logo-primary">Studio</span></a>
+      <header class="header">
+         <div class="container head">
+         <a href="./index.html" rel="noopener noreferrer" class="logo" lang="en">Web<span class="logo-primary">Studio</span></a>
          <nav class="nav">
             <ul class="nav-list">
-               <li class="nav-item"><a class="nav-link " href="./index.html">Студия</a></li>
-               <li class="nav-item"><a class="nav-link curent" href="./portfolio.html">Портфолио</a></li>
+               <li class="nav-item"><a class="nav-link curent" href="./index.html">Студия</a></li>
+               <li class="nav-item"><a class="nav-link" href="./portfolio.html">Портфолио</a></li>
                <li class="nav-item"><a class="nav-link" href="">Контакты</a></li>
             </ul>
          </nav>
-         <ul class="contact-list">
-            <li class="contact-item"><a class="contact-link one" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-            <li class="contact-item"><a class="contact-link two" href="tel:+380961111111">+38 096 111 11 11</a></li>
-         </ul>
-      </div>
+            <ul class="contact-list">
+               <li class="contact-item">
+                  <svg class="icon-contact">
+                     <use href="./images/icons-svg/symbol-defs.svg#icon-mail-icon" ></use>
+                  </svg>
+                  <a class="contact-link" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+               <li class="contact-item">
+                  <svg class="icon-contact">
+                     <use href="./images/icons-svg/symbol-defs.svg#icon-phone-icon" ></use>
+                  </svg>
+                  <a class="contact-link" href="tel:+380961111111">+38 096 111 11 11</a></li>
+            </ul>
+         </div>
       </header>
       <main>
          <!-- Верхняя линия -->
@@ -138,17 +145,53 @@
       </main>
       <!-- Подвал -->
       <footer class="footer">
-         <div class="container">
+         <div class="container container-footer">
+           <div class="container-logo">
             <a href="./index.html" rel="noopener noreferrer" class="logo" lang="en">Web<span
-                  class="logo-secondary">Studio</span></a>
+               class="logo-secondary">Studio</span></a>
             <address class="address">
                <p class="address-destination">г. Киев, пр-т Леси Украинки, 26</p>
                <ul class="address-list">
-                  <li class="address-item"><a class="address-contact" href="mailto:info@devstudio.com">info@devstudio.com</a>
-                  </li>
+                  <li class="address-item"><a class="address-contact" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
                   <li class="address-item"><a class="address-contact" href="tel:+380961111111">+38 096 111 11 11</a></li>
                </ul>
             </address>
+           </div>
+           <div class="container-join">
+              <p class="join-title">
+               присоединяйтесь
+              </p>
+              <ul class="join-list">
+                 <li class="join-items">
+                    <a href="" class="join-link"> 
+                     <svg class="icon-join">
+                        <use href="./images/icons-svg/symbol-defs.svg#icon-instagram-icon"></use>
+                     </svg>
+                    </a>
+                  </li>
+                 <li class="join-items">
+                    <a href="" class="join-link">
+                    <svg class="icon-join">
+                       <use href="./images/icons-svg/symbol-defs.svg#icon-twitter-icon" ></use>
+                    </svg>   
+                     </a>
+                  </li>
+                 <li class="join-items">
+                    <a href="" class="join-link">
+                     <svg class="icon-join">
+                        <use href="./images/icons-svg/symbol-defs.svg#icon-facebook-icon" ></use>
+                     </svg>                 
+                    </a>
+                  </li>
+                 <li class="join-items">
+                    <a href="" class="join-link">
+                     <svg class="icon-join ">
+                        <use href="./images/icons-svg/symbol-defs.svg#icon-linkedin-icon" ></use>
+                     </svg>                     
+                    </a>
+                  </li>
+              </ul>
+          </div>
          </div>
       </footer>
    </body>
