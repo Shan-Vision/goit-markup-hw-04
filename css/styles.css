@@ -12,6 +12,8 @@
   --features-icon-background: #F5F4FA;
   --footer-icon-background:#43444d;
   --team-icon-color:#AFB1B8;
+  --client-border-color:#AFB1B8;
+  --client-logo-color:#AFB1B8;
 }
 
 li {
@@ -99,7 +101,7 @@ body {
 .nav-item .nav-link:focus,
 .contact-item .contact-link:hover,
 .contact-item .contact-link:focus {
-  color: #2196f3;
+  color: var(--accent-color);
 }
 .nav{
   margin-left: 93px;
@@ -125,13 +127,15 @@ body {
 }
 /* --------------------------------Contacts */
 .contact-item .contact-link {
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
   color: var(--primary-text-color);
   font-weight: 500;
   line-height: 1.4;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02em;  
+
 }
 .container.head {
   display: flex;
@@ -151,32 +155,17 @@ body {
 .contact-item{
   display: flex;
   align-items: center;
-}       
+}  
+    
 .icon-contact{
   width: 16px;
   height: 12px;
   margin-right: 10px; 
-  cursor: pointer;
-  fill: violet;
-  background-color: yellow;
+  fill:currentColor;
  }
 .icon-contact:hover{
   fill: var(--accent-color);
-  background-color: rgb(15, 15, 15);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* --------------------------------------Hero */
 .main-bgc{
   max-width: 1600px;
@@ -184,16 +173,16 @@ body {
   margin-left: auto;
   margin-right: auto;
 
-  background-image: url('../images/background.jpg'); 
-     /* linear-gradient(to right,rgba(47, 48, 58, 0.4)) */
-  
-  
+  background-image:linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+    ),url('../images/background.jpg'); 
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 .section.main{
-  /* background-color: var(--header-bgc-color); */
   padding-top: 200px;
   padding-bottom: 200px;
   text-align: center;
@@ -230,6 +219,7 @@ body {
 .features,
 .work,
 .team,
+.client,
 .content-item .content-button,
 .address-destination {
   letter-spacing: 0.03em;
@@ -245,28 +235,6 @@ body {
 .features-item{
   width: 270px;
 }
-.features-item::before{
-  display: block;
-  content:"";
-  height: 120px;
-  margin-bottom: 30px;
-  background-color:var(--features-icon-background);
-  background-position: center;
-  background-size: auto;
-  background-repeat: no-repeat;
-}
-.features-item.one::before{
-  background-image: url(../images/png/anten.png);
-}
-.features-item.two::before{
-  background-image: url(../images/png/clock.png);
-}
-.features-item.three::before{
-  background-image: url(../images/png/diagram.png);
-}
-.features-item.four::before{
-  background-image: url(../images/png/astronaut.png);
-}
 .features-caption {
   margin-bottom: 10px;
 
@@ -277,20 +245,28 @@ body {
 .features-text {
   line-height: 1.71;
 }
+.features-icon-container{
+  display: block;
+  margin-bottom: 30px;
+  padding: 25px 100px;
+  background-color: var(--features-icon-background);
+}
+.icon-features{
+  width: 70px;
+  height: 70px;
+  fill:var(--title-text-color);
+}
 /* --------------------------------Чем занимаемся  */
 .work-title,
-.team-title {
+.team-title,
+.client-title{
   color: var(--title-text-color);
   font-size: 36px;
   font-weight: 700;
   line-height: 1.16;
 }
 .section.work {
-  text-align: center;
   padding-top: 0;
-}
-.work-title {
-  margin-bottom: 50px;    
 }
 .work-list {
   display: flex;
@@ -302,9 +278,9 @@ body {
 /* --------------------------------------Наша команда */
 .section.team {
   background-color: var(--team-bgc-color);
-  text-align: center;
 }
-.team-title{
+.work-title, .team-title, .client-title{
+  text-align: center;
   margin-bottom: 50px;
 }
 .team-caption {
@@ -321,48 +297,77 @@ body {
 .team-list {
   display: flex;
 }
+.team-item{
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
 .team-list .team-item + .team-item {
   margin-left: 30px;
 }
 .team-box{
   background-color: var(--primary-white-color);
   padding: 30px 0;
+  text-align: center;
+  border-radius: 0px 0px 4px 4px;
 }
 .team-icon-list{
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  /* flex-direction: center; */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-  /* padding-top: 10px; */
+  margin: 0 32px;
 }
-.team-icon-item{
+
+.team-icon-list .team-icon-item + .team-icon-item{
+  margin-left: 10px;
+}
+.team-icon-link{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
-  padding: 12px;
+  color:var(--team-icon-color);
 }
 .icon-team{
   width: 22px;
   height: 22px;
-  fill:var(--team-icon-color);
+  fill: currentColor;
 }
-/* .team-icon-link{
-  color: var(--team-icon-color);
-} */
 
-.team-icon-item:hover{
-  fill:var(--primary-white-color);
+.team-icon-link:hover{
+  color:var(--primary-white-color);
   background-color:var(--accent-color);
   border-radius: 50%;
 }
+/*---------------------------Наши партнеры */
 
-
-
-
-
-
-
+.client-list{
+  display: flex;
+}
+.client-list .client-item + .client-item{
+  margin-left: 30px;
+}
+.client-item{
+  width: 170px;
+  height: 92px;
+  padding: 16px 32px;
+  border: 1px solid var(--client-border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--client-logo-color);
+}
+.client-item:hover{
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.client-link{
+  display: inline-flex;
+  align-items: center;
+  color: currentColor;
+}
+.logo-client{
+  width: 106px;
+  height: 60px;
+  fill:currentColor;
+}
 /*------------------------ Портфолио кнопки */
 .content-primary-list .content-button {
   display: inline-block;
@@ -428,11 +433,12 @@ body {
 }
 .content-link {
   text-decoration: none;
+  display: block;
 }
 .content-block {
   padding: 20px 24px;
-  border-color: 1px solid var(--content-border-color);
-  border-top-color: 0;
+  border: 1px solid var(--content-border-color);
+  border-top: 0;
 }
 /* ----------------------------------------Footer */
 .footer{
@@ -475,13 +481,13 @@ body {
 .join-list{
   display: flex;
 }
-.join-items{
+.join-link{
+  display: inline-block;
   width: 44px;
   height: 44px;
-  padding: 12px;
   border-radius: 50%;
   background-color:var(--footer-icon-background);
-
+  color: var(--primary-white-color);
 }
 .join-list .join-items + .join-items{
   margin-left: 10px;
@@ -489,9 +495,10 @@ body {
 .icon-join{
   width: 22px;
   height: 22px;
-  fill: var(--primary-white-color);
+  fill: currentColor;
+  margin: 11px;
 }
-.join-items:hover{
-  fill:var(--primary-white-color);
+.join-link:hover{
+  color:var(--primary-white-color);
   background-color: var(--accent-color);
 }
