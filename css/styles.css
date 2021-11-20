@@ -10,6 +10,7 @@
   --header-border-color: #ececec;
   --content-border-color: #eeeeee;
   --features-icon-background: #F5F4FA;
+  --features-icon-color:#212121;
   --footer-icon-background:#43444d;
   --team-icon-color:#AFB1B8;
   --client-border-color:#AFB1B8;
@@ -74,6 +75,7 @@ body {
 }
 /* ---------------------------------Logo */
 .logo {
+  
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -139,7 +141,6 @@ body {
 }
 .container.head {
   display: flex;
-  align-items: baseline;
 }
 .contact-link,
 .address-contact {
@@ -159,15 +160,16 @@ body {
     
 .icon-contact{
   width: 16px;
-  height: 12px;
+  height: 16px;
   margin-right: 10px; 
   fill:currentColor;
  }
-.icon-contact:hover{
-  fill: var(--accent-color);
-}
 /* --------------------------------------Hero */
-.main-bgc{
+
+.section.main{
+  padding-top: 200px;
+  padding-bottom: 200px;
+  text-align: center;  
   max-width: 1600px;
   height: 600px;
   margin-left: auto;
@@ -181,11 +183,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-}
-.section.main{
-  padding-top: 200px;
-  padding-bottom: 200px;
-  text-align: center;
 }
 
 .main-title {
@@ -246,15 +243,20 @@ body {
   line-height: 1.71;
 }
 .features-icon-container{
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
   margin-bottom: 30px;
-  padding: 25px 100px;
+  color:var(--features-icon-color) ;
+
   background-color: var(--features-icon-background);
 }
 .icon-features{
   width: 70px;
   height: 70px;
-  fill:var(--title-text-color);
+  fill:currentColor;
+
 }
 /* --------------------------------Чем занимаемся  */
 .work-title,
@@ -319,7 +321,7 @@ body {
   margin-left: 10px;
 }
 .team-icon-link{
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 44px;
@@ -332,7 +334,8 @@ body {
   fill: currentColor;
 }
 
-.team-icon-link:hover{
+.team-icon-link:hover,
+.team-icon-link:focus{
   color:var(--primary-white-color);
   background-color:var(--accent-color);
   border-radius: 50%;
@@ -345,23 +348,20 @@ body {
 .client-list .client-item + .client-item{
   margin-left: 30px;
 }
-.client-item{
-  width: 170px;
-  height: 92px;
-  padding: 16px 32px;
-  border: 1px solid var(--client-border-color);
-  border-radius: 4px;
-  cursor: pointer;
-  color: var(--client-logo-color);
-}
-.client-item:hover{
+.client-link:hover,.client-link:focus{
   color: var(--accent-color);
   border-color: var(--accent-color);
 }
 .client-link{
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  color: currentColor;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+
+  color: var(--client-logo-color);
+  border: 1px solid var(--client-border-color);
+  border-radius: 4px;
 }
 .logo-client{
   width: 106px;
@@ -382,9 +382,12 @@ body {
   cursor: pointer;
   padding: 6px 22px;
 }
+.content-button.curent{
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+} 
 .content-button:hover,
-.content-button:focus,
-.content-button curent {
+.content-button:focus{
   color: var(--primary-white-color);
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -415,10 +418,11 @@ body {
 .wrap-items:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
-.wrap-items:hover{
+.content-link:hover,
+.content-link:focus{
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.content-text {
+.content-text { 
   color: var(--primary-text-color);
   font-size: 16px;
   line-height: 1.87;
@@ -450,11 +454,13 @@ body {
   align-items: baseline;
 }
 /* -------------------------------------Footer-logo */
-.container .logo {
-  padding: 0 0 20px 0;
-}
+
  .address-item:not(:last-child) {
   margin-bottom: 9px;
+}
+.address-item .address-contact:hover, 
+.address-item .address-contact:focus{
+  color: var(--accent-color);
 }
 .address-item .address-contact {
   font-style: normal;
@@ -469,6 +475,11 @@ body {
   font-style: normal;
 }
 /* ----------------------------------------Footer-join */
+.container-logo .logo{
+  padding: 0;
+  margin-bottom: 20px;
+
+}
 .container-join{
   margin-left: 70px;
 }
@@ -498,7 +509,8 @@ body {
   fill: currentColor;
   margin: 11px;
 }
-.join-link:hover{
+.join-link:hover,
+.join-link:focus{
   color:var(--primary-white-color);
   background-color: var(--accent-color);
 }
